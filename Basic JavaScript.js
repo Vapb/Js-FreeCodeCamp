@@ -49,7 +49,18 @@ myArray.concat(["vic"]);
 
 function reusableFunction() {
     console.log("Hi World");
-} 
+}
+
+//or 
+
+const reusableFunction = function() {
+  console.log("Hi World");
+}
+
+//or 
+
+const reusableFunction = () => console.log("Hi World");
+
 reusableFunction()
 
 function functionWithArgs(param1, param2) {

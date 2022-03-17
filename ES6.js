@@ -135,3 +135,109 @@ const profileUpdate = (profileData) => {
 const profileUpdate = ({ name, age, nationality, location }) => {}
 
 // Create Strings using Template Literals
+
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  const failureItems = arr.map(item => `<li class="text-warning">${item}</li>`);
+  return failureItems;
+}
+const failuresList = makeList(result.failure);
+
+// Write Concise Object Literal Declarations Using Object Property Shorthand
+
+/*
+const createPerson = (name, age, gender) => {
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+};
+*/
+
+const createPerson = (name, age, gender) => {
+  return{name, age, gender}
+};
+
+// Write Concise Declarative Functions with ES6
+
+/*
+const bicycle = {
+  gear: 2,
+  setGear: function(newGear) {
+    this.gear = newGear;
+    return "HEY"
+  }
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+*/
+
+const bicycle = {
+  gear : 2,
+  setGear(newGear) {
+    this.gear = newGear; 
+  }
+}
+
+// Use class Syntax to Define a Constructor Function
+
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
+
+// Use getters and setters to Control Access to an Object
+
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('anonymous');
+console.log(novel.writer);
+novel.writer = 'newAuthor';
+console.log(novel.writer);
+
+
+// Use export to Share a Code Block
+
+const add = (x, y) => {
+  return x + y;
+}
+
+export { add };
+
+// Reuse JavaScript Code Using import
+
+import {add} from "./math_functions.js";
+console.log(add(2,3));
+
+// Use * to Import Everything from a File
+
+import * as myMathModule from "./math_functions.js";
+myMathModule.add(2,3);
+
+// Create an Export Fallback with export default
+
+
+
+
