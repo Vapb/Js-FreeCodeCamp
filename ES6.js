@@ -238,6 +238,30 @@ myMathModule.add(2,3);
 
 // Create an Export Fallback with export default
 
+export default function subtract(x, y) {
+  return x - y;
+}
 
+// Create a JavaScript Promise
 
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    resolve("We got the data")
+  } else {  
+    reject("Data not received")
+  }
+});
 
+// Handle a Fulfilled Promise with then
+
+makeServerRequest.then(result => {
+  console.log(result)
+});
+
+// Handle a Rejected Promise with catch
+
+makeServerRequest.catch(error => {
+  console.log(error)
+});
