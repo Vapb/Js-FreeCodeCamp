@@ -39,10 +39,7 @@ console.log(result5); // returns [Twinkle, twinkle]
 
 // Match Anything with Wildcard Period
 
-let exampleStr = "Let's have fun with regular expressions!";
 let unRegex = /.un/; // fun, run, gun. tun ...
-let result6 = unRegex.test(exampleStr);
-console.log(result6);
 
 // Match Single Character with Multiple Possibilities
 
@@ -129,4 +126,29 @@ let bgRegex16 = /Haz{4,}ah/  // with no upper limit
 
 let bgRegex17 = /Tim{4}ber/
 
+// Check for All or None
 
+let bgRegex18 = /favou?rite/ // matches with favourite and favorite
+
+// Positive and Negative Lookahead
+
+// /q(?=u)/ -> Positive 
+// /q(?!u)/ -> Negative
+
+let bgRegex19 = /(?=\w{6,})(?=\w*\d{2})/ // match passwords that are greater than 5 characters long, and have two consecutive digits.
+
+// Check For Mixed Grouping of Characters
+
+let bgRegex20 = /(Eleanor|Franklin).*Roosevelt/g; // match with Elanor or franklin *** Rooselve 
+
+// Reuse Patterns Using Capture Groups
+
+let bgRegex21 = /(\w+) \1 \1/ // same as /(\w+) (\w+) (\w+)/
+
+// Use Capture Groups to Search and Replace
+
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue"); // return the sky is blue
+
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1'); // return Camp Code
