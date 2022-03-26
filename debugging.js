@@ -29,4 +29,3 @@ let innerHtml2 = '<p>Click here to <a href="#Home">return home</a></p>';
 // Catch Off By One Errors When Using Indexing
 // Use Caution When Reinitializing Variables Inside a Loop
 // Prevent Infinite Loops with a Valid Terminal Condition
-
