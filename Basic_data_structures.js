@@ -67,5 +67,63 @@ fruits.indexOf('oranges'); // return 2
 fruits.indexOf('pears'); // return 1
 
 // Iterate Through All an Array's Items Using For Loops
+// Create complex multi-dimensional arrays
+// Add Key-Value Pairs to JavaScript Objects
 
+let foods = {
+    apples: 25,
+    oranges: 32,
+    plums: 28
+  };
+  
+foods.bananas = 13;
+foods.grapes = 35
+foods.strawberries = 27
+console.log(foods);
 
+// Modify an Object Nested Within an Object
+
+let userActivity = {
+    id: 23894201352,
+    date: 'January 1, 2017',
+    data: {
+      totalUsers: 51,
+      online: 42
+    }
+  };
+  
+userActivity.data.online = 45;
+
+//  Access Property Names with Bracket Notation
+
+userActivity["data"]["online"] = 45;
+
+// Use the delete Keyword to Remove Object Properties
+
+delete userActivity["id"];
+
+// Check if an Object has a Property
+
+users.hasOwnProperty('id');
+
+// Iterate Through the Keys of an Object with a for...in Statement
+
+const users = {
+    Alan: {
+      online: false
+    },
+    Jeff: {
+      online: true
+    },
+    Sarah: {
+      online: false
+    }
+}
+
+for (let user in users) { // This iterates through the keys of object. This works with arrays
+    console.log(user); 
+}
+
+// Generate an Array of All Object Keys with Object.keys()
+
+Object.keys(users) // returns all users 
