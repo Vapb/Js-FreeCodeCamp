@@ -4,7 +4,6 @@ function convertToF(celsius) {
     fahrenheit = ((celsius * 9/5) + 32);
     return fahrenheit;
 }
-console.log(convertToF(30));
 
 // Reverse a String
 function reverseString(str) {
@@ -14,8 +13,6 @@ function reverseString(str) {
     }
     return reversedString;
 }
-console.log(reverseString("hello"));
-console.log("hello".split("").reverse().join(""))
 
 // Factorialize a Number
 function factorialize(num) {
@@ -54,7 +51,7 @@ function findLongestWordLength(str) {
           largestWord = wordCount;
     }
     return largestWord;
-  }
+}
 
 function findLongestWordLength(str){
     let wordsArray = str.split(" ");
@@ -127,4 +124,87 @@ function truncateString(str, num) {
     }
     return str;
 }
-  
+
+// Finders Keepers
+function findElement(arr, func) {
+    for (let element of arr) {
+        if (func(element)) {
+            return element;
+        }
+    }
+    return
+}
+
+function findElement(arr, func) {
+    return arr.find(func);
+}
+
+function findElement(arr, func) {
+    return arr[arr.map(func).indexOf(true)];
+}
+
+// Boo who
+function booWho(bool) {
+    return typeof bool == "boolean";
+}
+
+// Title Case a Sentence
+function titleCase(str) {
+    let lowerStr = str.toLowerCase();
+    let result = [];
+    for (let word of lowerStr.split(" ")){
+      result.push(word[0].toUpperCase() + word.slice(1));
+    }
+    return result.join(' ');
+}
+
+function titleCase(str) {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map(val => val.replace(val[0], val[0].toUpperCase()))
+      .join(" ");
+}
+
+// Slice and Splice
+function frankenSplice(arr2, arr1, n) {
+    return arr1.slice(0,n).concat(arr2,arr1.slice(n));
+}
+
+function frankenSplice(arr1, arr2, n) {
+    let localArr = arr2.slice();
+    localArr.splice(n, 0, ...arr1);
+    return localArr;
+}
+
+// Falsy Bouncer
+function bouncer(arr) {
+    let result = [];
+    for (let val of arr) {
+      if (Boolean(val)){
+        result.push(val)
+      }
+    }
+    return result
+}
+
+function bouncer(arr) {
+    return arr.filter(Boolean);
+}
+
+// Where do I Belong
+function getIndexToIns(arr, num) {
+    arr.push(num);
+    arr.sort((a, b) => a - b);
+    return arr.indexOf(num); 
+}
+
+function getIndexToIns(arr, num) {
+    return arr.filter(val => num > val).length;
+}
+
+// Mutations
+
+// 
+
+
