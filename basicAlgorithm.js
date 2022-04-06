@@ -204,7 +204,37 @@ function getIndexToIns(arr, num) {
 }
 
 // Mutations
+function mutation(arr) {
+  let test = arr[0].toLowerCase();
+  let target = arr[1].toLowerCase();
+  for (let i=0; i < target.length; i++){
+    if (test.indexOf(target[i]) < 0){
+      return false
+    }
+  }
+  return true;
+}
+ 
+// Chunky Monkey
+function chunkArrayInGroups(arr, size) {
+  let result = [];
+  let shard = []
+  let helper = 1
 
-// 
+  for (let i =0; i < arr.length; i++){
+    if (helper == size){
+      shard.push(arr[i])
+      result.push(shard)
+      shard = []
+      helper = 1
+    }
+    else{
+      shard.push(arr[i])
+      helper ++;
+    }
+  }
+  if (shard.length != 0){result.push(shard)}
+  return result;
+}
 
 
