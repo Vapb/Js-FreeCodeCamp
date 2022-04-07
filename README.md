@@ -5,8 +5,8 @@
 * Regular Expressions - 100%
 * Debugging - 100%
 * Basic Data Structures - 100%
-* Basic Algorithm Scripting - 80%
-* Object Oriented Programming - 0%
+* Basic Algorithm Scripting - 100%
+* Object Oriented Programming - 20%
 * Functional Programming - 0%
 * Intermediate Algorithm Scripting - 0%
 * JavaScript Algorithms and Data Structures Projects - 0%
