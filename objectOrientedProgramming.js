@@ -118,14 +118,78 @@ Dog.prototype = {
 Dog.prototype.isPrototypeOf(beagle);
 
 //Understand the Prototype Chain
+Object.prototype.isPrototypeOf(Dog.prototype);
 
 //Use Inheritance So You Don't Repeat Yourself
+function Cat(name) {
+    this.name = name;
+  }
+  
+Cat.prototype = {
+  constructor: Cat
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear
+};
+
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
 
 //Inherit Behaviors from a Supertype
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+let duck = Object.create(Animal.prototype); 
+let beagle2 = Object.create(Animal.prototype); 
+console.log(duck.eat())
 
 //Set the Child's Prototype to an Instance of the Parent
+//Remember that the prototype is like the "recipe" for creating an object. In a way, the recipe for Bird now includes all the key "ingredients" from Animal
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype)
+
+let beagle3 = new Dog();
 
 //Reset an Inherited Constructor Property
+function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+let duck4 = new Bird();
+let beagle4 = new Dog();
+
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
 
 //Add Methods After Inheritance
 
