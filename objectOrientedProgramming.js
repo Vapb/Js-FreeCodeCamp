@@ -192,14 +192,92 @@ Bird.prototype.constructor = Bird;
 Dog.prototype.constructor = Dog;
 
 //Add Methods After Inheritance
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function() {
+  console.log('Woof!');
+}
+
+let beagle5 = new Dog();
+beagle5.eat();
+beagle5.bark();
 
 //Override Inherited Methods
+// In previous lessons, you learned that an object can inherit its behavior (methods) from another object by referencing its prototype object
+// ChildObject.prototype = Object.create(ParentObject.prototype);
+// Then the ChildObject received its own methods by chaining them onto its prototype:
+// ChildObject.prototype.methodName = function() {...};
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+Penguin.prototype.fly = function() { return "Alas, this is a flightless bird."}
+
+let penguin = new Penguin();
+console.log(penguin.fly());
 
 //Use a Mixin to Add Common Behavior Between Unrelated Objects
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log("Gliding");
+  }
+}
+
+glideMixin(boat);
+glideMixin(bird);
 
 //Use Closure to Protect Properties Within an Object from Being Modified Externally
+function Bird() {
+  let weight = 15;
+
+  this.getWeight = function() {
+    return weight;
+  }
+}
+
+let x = new Bird();
+console.log(x.getWeight())
 
 //Understand the Immediately Invoked Function Expression (IIFE)
+(function () {
+  console.log("A cozy nest is ready");
+})();
 
 //Use an IIFE to Create a Module
+let funModule = (function () {
+  return {
+    isCuteMixin : function(obj) {
+      obj.isCute = function() {
+        return true;
+        };
+      },
+    singMixin : function(obj) {
+      obj.sing = function() {
+        console.log("Singing to an awesome tune");
+        };
+    }
+  } 
+})();
 
+funModule.isCuteMixin(duck);
+duck.isCute();
