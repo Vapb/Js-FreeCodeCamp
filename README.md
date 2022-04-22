@@ -7,6 +7,6 @@
 * Basic Data Structures - 100%
 * Basic Algorithm Scripting - 100%
 * Object Oriented Programming - 100%
-* Functional Programming - 0%
+* Functional Programming - 15%
 * Intermediate Algorithm Scripting - 0%
 * JavaScript Algorithms and Data Structures Projects - 0%
